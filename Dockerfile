@@ -1,4 +1,5 @@
 FROM spikhalskiy/zerotier
-COPY configIpTables.sh /configIpTables.sh
-RUN chmod +x configIpTables.sh
-RUN configIpTables.sh
+COPY configSystem.sh /configSystem.sh
+RUN chmod 0755 /configSystem.sh
+
+ENTRYPOINT ["/configSystem.sh"]
